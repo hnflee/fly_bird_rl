@@ -1,0 +1,34 @@
+#!/bin/bash
+files=(
+    engine.js
+    base.js 
+    gfx.js
+    atlas.js
+    physics.js
+    sound.js
+    state.js
+    screen.js
+    entity.js
+    bird.js
+    pipe.js
+    titlescreen.js
+    mainscreen.js
+    input.js
+    ql.js
+    game.js
+)
+
+directory="../engine/"
+
+> enginelib.js
+
+for i in ${files[@]};
+do
+    echo '//---------------------------' >> enginelib.js
+    echo '// '$i >> enginelib.js
+    echo '//---------------------------' >> enginelib.js
+    echo >> enginelib.js
+    cat $directory$i >> enginelib.js
+    echo >> enginelib.js
+    echo >> enginelib.js
+done
